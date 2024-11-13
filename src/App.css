@@ -1,0 +1,12 @@
+Body{
+margin: 0px !important;
+}
+.navHeightCustom{
+    height: 100vh;
+}
+.mainLayout{
+    flex-flow: nowrap;
+}
+.CommandBarSize{
+    width: 100%;
+}
