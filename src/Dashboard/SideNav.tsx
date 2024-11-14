@@ -7,7 +7,7 @@ import {
 } from "@fluentui/react";
 import { DefaultPalette } from "@fluentui/react/lib/Styling";
 import { Stack, IStackStyles, IStackTokens } from "@fluentui/react";
-
+import logo from "../CapsitechLogo/capLogo.svg"
 const navLinkGroups: INavLinkGroup[] = [
   {
     links: [
@@ -72,7 +72,7 @@ function SideNav() {
     <>
       <Stack styles={stackStyles} tokens={stackTokens}>
         <Stack.Item>
-          
+          <img src={logo} />
           <Nav styles={navStyles} groups={navLinkGroups} />
         </Stack.Item>
       </Stack>

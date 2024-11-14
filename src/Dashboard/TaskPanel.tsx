@@ -82,7 +82,7 @@ export const TaskPanel: React.FunctionComponent = () => {
                   },
                 }}
               >
-                <Label>Email</Label>
+                <Label>Project</Label>
                 <TextField
                 // value={details.email}
 
@@ -97,7 +97,7 @@ export const TaskPanel: React.FunctionComponent = () => {
                   },
                 }}
               >
-                <Label>Username</Label>
+                <Label>Title</Label>
                 <TextField
                 // value={details.userName}
 
@@ -112,7 +112,7 @@ export const TaskPanel: React.FunctionComponent = () => {
                   },
                 }}
               >
-                <Label>First Name</Label>
+                <Label>Priority</Label>
                 <TextField
                 // value={details.firstName}
 
