@@ -1,8 +1,9 @@
 import React from "react";
 
 import { Stack, IStackStyles } from "@fluentui/react/lib/Stack";
-import SideNav from "./Sidenav";
 import TopNav from "./TopNav";
+import SideNav from "./SideNav";
+import { TaskPanel } from "./TaskPanel";
 
 const stackStyles: IStackStyles = {
   root: {
@@ -34,6 +35,7 @@ function HomePage() {
         </Stack>
         <Stack styles={contentStackStyles}>
           <TopNav />
+          <TaskPanel />
         </Stack>
       </Stack>
     </>

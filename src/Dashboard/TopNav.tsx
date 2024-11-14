@@ -11,7 +11,7 @@ import { IStackStyles, IStackTokens, IStackItemStyles } from "@fluentui/react";
 import { Icon } from "@fluentui/react";
 import { PrimaryButton } from "@fluentui/react";
 import { Panel } from "@fluentui/react";
-// import { Field } from "formik";
+ import { Field } from "formik";
 import { TextField } from "@fluentui/react";
 import axios from "axios";
 // import { idContent } from '../../registration/regiscontext/idcontext';
@@ -129,17 +129,22 @@ const TopNav: React.FC = () => {
         <Stack.Item align="end" styles={stackItemStyles}>
           <span>
             <PrimaryButton onClick={handleInfo}>
-              <Icon iconName="Contact" />
+              <Icon iconName="Contact" styles={{
+                  root: {
+                    marginRight: 5,
+                  },
+                }} />
               <span>
-                <p>{details.userName}</p>
+                {/* <p>{details.userName}</p>
+                 */}
+                 <p> UserName</p>
               </span>
             </PrimaryButton>
           </span>
         </Stack.Item>
       </Stack>
    {/* {isCallout && (
-        <Callout
-          
+        <Callout          
           role="dialog"
           gapSpace={0}
           className={styles.callout}
@@ -154,7 +159,8 @@ const TopNav: React.FC = () => {
         isOpen={isPanelOpen}
         onDismiss={() => setIsPanelOpen(false)}
         headerText="Welcome"
-        type={PanelType.smallFluid}
+        // type={PanelType.smallFluid}
+        type={PanelType.medium}
       >
         <Stack
           styles={{ root: { backgroundColor: "lightgrey", height: "100vh" } }}

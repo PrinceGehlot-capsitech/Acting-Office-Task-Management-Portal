@@ -24,7 +24,7 @@ const navLinkGroups: INavLinkGroup[] = [
       {
         name: "Attendance Request",
         url: "/",
-        icon: "Calendar",
+        icon: "AddEvent",
       },
       {
         name: "Reports",
@@ -39,7 +39,7 @@ const navLinkGroups: INavLinkGroup[] = [
       {
         name: "Company policies",
         url: "/",
-        icon: "News",
+        icon: "TextDocument",
       },
     ],
   },
@@ -72,6 +72,7 @@ function SideNav() {
     <>
       <Stack styles={stackStyles} tokens={stackTokens}>
         <Stack.Item>
+          
           <Nav styles={navStyles} groups={navLinkGroups} />
         </Stack.Item>
       </Stack>
