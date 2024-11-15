@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Announced } from '@fluentui/react/lib/Announced';
 import { TextField, ITextFieldStyles } from '@fluentui/react/lib/TextField';
-import { DetailsList, DetailsListLayoutMode, Selection, IColumn } from '@fluentui/react/lib/DetailsList';
+import { DetailsList, DetailsListLayoutMode, Selection, IColumn, SelectionMode } from '@fluentui/react/lib/DetailsList';
 import { MarqueeSelection } from '@fluentui/react/lib/MarqueeSelection';
 import { mergeStyles } from '@fluentui/react/lib/Styling';
 
@@ -61,8 +61,7 @@ export class TaskTable extends React.Component<{}, IDetailsListBasicExampleState
 
     return (
       <div>
-        <div className={exampleChildClass}>{selectionDetails}</div>
-        <Announced message={selectionDetails} />
+       
         <TextField
           className={exampleChildClass}
           label="Filter by name:"
@@ -72,15 +71,11 @@ export class TaskTable extends React.Component<{}, IDetailsListBasicExampleState
         <Announced message={`Number of items after filter applied: ${items.length}.`} />
         <MarqueeSelection selection={this._selection}>
           <DetailsList
+          selectionMode={SelectionMode.none}
             items={items}
             columns={this._columns}
-            setKey="set"
-            layoutMode={DetailsListLayoutMode.justified}
-            selection={this._selection}
-            selectionPreservedOnEmptyClick={true}
-            ariaLabelForSelectionColumn="Toggle selection"
-            ariaLabelForSelectAllCheckbox="Toggle selection for all items"
-            checkButtonAriaLabel="select row"
+            setKey="set"      
+                 
           />
         </MarqueeSelection>
       </div>

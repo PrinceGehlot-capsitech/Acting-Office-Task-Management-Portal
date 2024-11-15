@@ -72,7 +72,7 @@ function SideNav() {
     <>
       <Stack styles={stackStyles} tokens={stackTokens}>
         <Stack.Item>
-          <img src={logo} />
+          <img src={logo}  style={{padding:"10px",  width:"180px" }} />
           <Nav styles={navStyles} groups={navLinkGroups} />
         </Stack.Item>
       </Stack>
