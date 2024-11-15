@@ -1,10 +1,10 @@
-import React from "react";
-
 import { Stack, IStackStyles } from "@fluentui/react/lib/Stack";
 import TopNav from "./TopNav";
 import SideNav from "./SideNav";
 import { TaskPanel } from "./TaskPanel";
 import { TaskTable } from "./TaskTable";
+// import { useNavigate } from "react-router-dom";
+
 
 const stackStyles: IStackStyles = {
   root: {
@@ -28,6 +28,8 @@ const contentStackStyles: IStackStyles = {
 };
 
 function HomePage() {
+  // const navigate = useNavigate();
+  
   return (
     <>
       <Stack horizontal styles={stackStyles}>

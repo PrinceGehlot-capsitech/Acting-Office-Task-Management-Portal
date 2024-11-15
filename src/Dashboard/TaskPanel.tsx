@@ -4,6 +4,9 @@ import { Panel, PanelType } from "@fluentui/react/lib/Panel";
 import { useBoolean } from "@fluentui/react-hooks";
 import {
   DefaultPalette,
+  Dropdown,
+  IDropdownOption,
+  IDropdownStyles,
   IStackItemStyles,
   Label,
   Stack,
@@ -16,6 +19,15 @@ import { initializeIcons } from "@fluentui/react/lib/Icons";
 initializeIcons();
 
 const buttonStyles = { root: { marginRight: 8 } };
+
+const dropdownStyles: Partial<IDropdownStyles> = {
+  dropdown: { width: 300 },
+};
+const options: IDropdownOption[] = [
+  { key: "broccoli", text: "Broccoli" },
+  { key: "carrot", text: "Carrot" },
+  { key: "lettuce", text: "Lettuce" },
+];
 
 export const TaskPanel: React.FunctionComponent = () => {
   const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] =
@@ -55,7 +67,7 @@ export const TaskPanel: React.FunctionComponent = () => {
             <span>
               {/* <p>{details.userName}</p>
                */}
-              <p> Add Task</p>
+              <p> Add Task </p>
             </span>
           </PrimaryButton>
         </span>
@@ -68,8 +80,6 @@ export const TaskPanel: React.FunctionComponent = () => {
         headerText="Add task"
         closeButtonAriaLabel="Close"
         onRenderFooterContent={onRenderFooterContent}
-        // Stretch panel content to fill the available height so the footer is positioned
-        // at the bottom of the page
         isFooterAtBottom={true}
       >
         <Stack>
@@ -83,7 +93,7 @@ export const TaskPanel: React.FunctionComponent = () => {
                 }}
               >
                 <Label>Project</Label>
-                <TextField  
+                <TextField
                 // value={details.email}
 
                 // disabled={isDisable}
@@ -113,11 +123,12 @@ export const TaskPanel: React.FunctionComponent = () => {
                 }}
               >
                 <Label>Priority</Label>
-                <TextField
-                // value={details.firstName}
-
-                // disabled={isDisable}
-                ></TextField>
+                <Dropdown
+                style={{width:"100%"}}
+                  placeholder="Select options"            
+                  options={options}
+                  styles={dropdownStyles}
+                />
               </Stack.Item>
 
               <Stack.Item
@@ -127,7 +138,7 @@ export const TaskPanel: React.FunctionComponent = () => {
                   },
                 }}
               >
-                <Label>Last Name</Label>
+                <Label>Due Date</Label>
                 <TextField
                 // value={details.lastName}
 
@@ -135,6 +146,7 @@ export const TaskPanel: React.FunctionComponent = () => {
                 ></TextField>
               </Stack.Item>
 
+
               <Stack.Item
                 styles={{
                   root: {
@@ -142,12 +154,15 @@ export const TaskPanel: React.FunctionComponent = () => {
                   },
                 }}
               >
-                <Label>Present Address</Label>
-                <TextField
-                // value={details.presentAddress}
-
-                // disabled={isDisable}
-                ></TextField>
+                <Label>Assignee</Label>
+                <Dropdown
+                style={{width:"100%"}}
+                  placeholder="Select options"                  
+                  defaultSelectedKeys={["apple", "banana", "grape"]}
+                  multiSelect
+                  options={options}
+                  styles={dropdownStyles}
+                />
               </Stack.Item>
 
               <Stack.Item
@@ -157,41 +172,13 @@ export const TaskPanel: React.FunctionComponent = () => {
                   },
                 }}
               >
-                <Label>Current Company</Label>
+                <Label>Description</Label>
                 <TextField
-                // value={details.currentCompany}
+                  multiline
+                  rows={3}
+                  // value={details.currentCompany}
 
-                // disabled={isDisable}
-                ></TextField>
-              </Stack.Item>
-
-              <Stack.Item
-                styles={{
-                  root: {
-                    marginBottom: 10,
-                  },
-                }}
-              >
-                <Label>Total Experience</Label>
-                <TextField
-                // value={details.totalExperience}
-
-                // disabled={isDisable}
-                ></TextField>
-              </Stack.Item>
-
-              <Stack.Item
-                styles={{
-                  root: {
-                    marginBottom: 10,
-                  },
-                }}
-              >
-                <Label>Designation</Label>
-                <TextField
-                // value={details.designation}
-
-                // disabled={isDisable}
+                  // disabled={isDisable}
                 ></TextField>
               </Stack.Item>
             </Stack>

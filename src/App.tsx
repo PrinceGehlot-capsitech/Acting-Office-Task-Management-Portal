@@ -1,19 +1,14 @@
-// import './App.css'
-
-// import { Stack } from "@fluentui/react"
-// import { CommandBarButtonAsExample } from "./Components/NavbarCommandBar"
-// import { NavWrappedExample } from "./Components/Navbarlist"
-import HomePage from "./Dashboard/Homepage"
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./Dashboard/Homepage";
+import LoginForm from "./Dashboard/LoginForm";
 
 function App() {
-
   return (
-    <HomePage />
-//     <Stack className="mainLayout">
-// <NavWrappedExample />
-// <CommandBarButtonAsExample />
-//     </Stack>
-  )
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<LoginForm />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

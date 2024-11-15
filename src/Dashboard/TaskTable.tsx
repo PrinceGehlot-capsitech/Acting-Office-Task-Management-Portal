@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Announced } from '@fluentui/react/lib/Announced';
 import { TextField, ITextFieldStyles } from '@fluentui/react/lib/TextField';
-import { DetailsList, DetailsListLayoutMode, Selection, IColumn, SelectionMode } from '@fluentui/react/lib/DetailsList';
+import { DetailsList,  Selection, IColumn, SelectionMode } from '@fluentui/react/lib/DetailsList';
 import { MarqueeSelection } from '@fluentui/react/lib/MarqueeSelection';
 import { mergeStyles } from '@fluentui/react/lib/Styling';
 
@@ -65,7 +65,7 @@ export class TaskTable extends React.Component<{}, IDetailsListBasicExampleState
         <TextField
           className={exampleChildClass}
           label="Filter by name:"
-          onChange={this._onFilter}
+          // onChange={this._onFilter}
           styles={textFieldStyles}
         />
         <Announced message={`Number of items after filter applied: ${items.length}.`} />
@@ -95,7 +95,7 @@ export class TaskTable extends React.Component<{}, IDetailsListBasicExampleState
     }
   }
 
-  private _onFilter = (ev: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, text: string): void => {
+  private _onFilter = (_ev: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, text: string): void => {
     this.setState({
       items: text ? this._allItems.filter(i => i.name.toLowerCase().indexOf(text) > -1) : this._allItems,
     });

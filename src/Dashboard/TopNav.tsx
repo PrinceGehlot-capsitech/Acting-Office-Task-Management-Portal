@@ -11,16 +11,18 @@ import { IStackStyles, IStackTokens, IStackItemStyles } from "@fluentui/react";
 import { Icon } from "@fluentui/react";
 import { PrimaryButton } from "@fluentui/react";
 import { mergeStyleSets } from "@fluentui/react";
+import { useNavigate } from "react-router-dom";
 
 import { useBoolean, useId } from '@fluentui/react-hooks';
 
 const TopNav: React.FC = () => {
-
+  
   const stackStyles: IStackStyles = {
     root: {
       background: DefaultPalette.themePrimary,
     },
   };
+  const navigate = useNavigate();
   const stackItemStyles: IStackItemStyles = {
     root: {
       background: DefaultPalette.themePrimary,
@@ -99,7 +101,7 @@ const TopNav: React.FC = () => {
             isCircularNavigation
           >
             <Stack  gap={8} horizontal>
-              <PrimaryButton onClick={toggleIsCalloutVisible}>
+              <PrimaryButton onClick={() =>{navigate("/login")}}>
                 Logout
               </PrimaryButton>
               <DefaultButton onClick={toggleIsCalloutVisible}>
